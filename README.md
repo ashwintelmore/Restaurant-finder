@@ -1,3 +1,14 @@
+
+# Project Details
+### Intorduction
+A restaurant finding system which will help people to check for the restaurants according to the dish he/she wants to eat. It will enable the user to look for all the nearest  restaurants offering that dish. It will also help the owner of the restaurant to get more customers for his/her restaurant. 
+It will be beneficial for all the people who are unaware of the place and restaurants. They will easily find the nearest restaurants and can make their day better without any hassle.
+
+
+ Project link :   [Restaurant Finder](https://restaurantfinder-asz.web.app/)
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
