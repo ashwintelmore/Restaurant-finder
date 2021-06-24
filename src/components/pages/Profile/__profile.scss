@@ -1,0 +1,138 @@
+.details {
+
+    .input-card-box {
+        margin-top: 8%;
+        padding-bottom: 8%;
+
+        .input-card-options {
+            h2 {
+                text-align: left;
+                width: 90%;
+                font-size: 1.8rem;
+                margin: 0 auto;
+            }
+
+            .options {
+
+                input,
+                #city {
+                    width: 45%;
+
+                    @include breakpoint-down(medium) {
+                        width: 90%;
+                    }
+                }
+            }
+
+            .dish {
+                input:nth-child(1) {
+                    width: 10.4%;
+
+                    @include breakpoint-down(medium) {
+                        width: 90%;
+                    }
+                }
+
+                input:nth-child(3) {
+                    width: 10.4%;
+
+                    @include breakpoint-down(medium) {
+                        width: 90%;
+                    }
+                }
+
+                input:nth-child(4) {
+                    width: 35%;
+
+                    @include breakpoint-down(medium) {
+                        width: 90%;
+                    }
+                }
+
+                input,
+                #city {
+                    width: 22%;
+
+                    @include breakpoint-down(medium) {
+                        width: 90%;
+                    }
+                }
+
+                button {
+                    background: $add-btn-gradient;
+                    width: 5%;
+                    margin: 0;
+                    padding: 1rem;
+
+                    @include breakpoint-down(medium) {
+                        width: 20%;
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+
+
+            button {
+                @include breakpoint-down(small) {
+                    width: 50%;
+                }
+            }
+
+        }
+
+        .list {
+            width: 95%;
+            margin: .5rem auto;
+            display: flex;
+            text-align: left;
+
+            .item {
+                // background: $light-gry;
+                border: 1px solid rgb(163, 163, 163);
+                font-size: $lg-font;
+                padding: 0 7px;
+            }
+
+            .item-1 {
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+                width: 3em;
+            }
+
+            .item-2 {
+                width: 20%;
+            }
+
+            .item-3 {
+                width: 60%;
+            }
+
+            .item-4 {
+                background: none;
+                border: none;
+
+                width: 10%;
+                margin: 0 1rem;
+                padding: 0;
+                
+            }
+
+            button {
+                background: $remove-btn-gradient;
+
+                width: 60%;
+                margin: 0;
+                padding: .5rem;
+            
+                    @include breakpoint-down(medium) {
+                        width: 100%;
+                    }
+                
+            }
+        }
+    }
+
+
+}

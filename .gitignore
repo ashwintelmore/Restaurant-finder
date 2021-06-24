@@ -17,6 +17,17 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.vscode
+#For GitHub 
+.firebaserc
+database.rules.json
+firebase.json
+firestore.indexes.json
+firestore.rules
+notes.txt
+storage.rules
+.firebase
+#Delete Above
 
 npm-debug.log*
 yarn-debug.log*

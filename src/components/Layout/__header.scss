@@ -1,0 +1,33 @@
+// @import "../../sass/__variables";
+.header{
+    background-color: $primary-color;
+    
+    &__menu{
+
+        .header__logo {
+            img{
+                width:100%;
+                @include breakpoint-down(small){
+                    width: 80%;
+                }
+            }
+        }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .menu-item{
+            a{
+                width: 100%;
+            }
+        }
+    }
+    &__links{
+        font-family: $font-fam-stat;
+        font-size: 1.25rem;
+
+        @include breakpoint-down(small){
+            font-size: .8rem;
+        }
+    }
+}

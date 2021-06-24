@@ -1,0 +1,53 @@
+.register-vector {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: 6% auto;
+
+    @include breakpoint-down(medium){
+        flex-direction: column-reverse;
+        width: 100%;
+        margin: 0;
+    }
+
+    .input-card-box {
+        min-width: 50%;
+        .input-card-options {
+            text-align: center;
+            .options {
+                input {
+                    width: 80%;
+                }
+            }
+
+            button {
+                margin-top: 1rem;
+                margin-bottom: 0;
+                width: 30%;
+                @include breakpoint-down(small){
+                    width: 40%;
+                }
+            }
+        }
+        .link{
+            margin: 4rem ;
+        }
+       
+    }
+
+    .vector {
+        min-width: 60%;
+        img {
+            text-align: center;
+            width: 100%;
+            background-size: contain;
+        }
+        h4{
+            
+            text-align: center;
+            margin: 0;
+            
+        }
+    }
+
+}

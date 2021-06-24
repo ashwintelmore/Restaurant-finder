@@ -1,57 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter, Route, Switch , Redirect, useParams } from 'react-router-dom';
+
+import './sass/App.scss'
+import {  isEmpty } from 'react-redux-firebase'
+import { useSelector } from 'react-redux'
+
+import Home from './components/pages/Home';
+import LoginPage from './components/pages/Login';
+import RegisterPage from './components/pages/Register';
+import ProfilePage from './components/pages/Profile/Index';
+import Header from './components/Layout/Header';
+import PrivateRoute from './components/Routes/PrivateRoute';
+import Loder from './components/helper/Loder';
+import RestroDetails from './components/pages/RestroPage';
+import ScrollToTop from './components/helper/Loder/ScrollToTop';
 
 function App() {
+  const auth = useSelector((state) => state.firebase.auth);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Route component={Header} />
+      <ScrollToTop />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route  path="/loader" component={Loder} />
+        <Route  path="/restro/:restroId?" component={RestroDetails} />
+        <PrivateRoute exact path="/profile/:userID?" component={ProfilePage} />
+
+        {
+          !isEmpty(auth) ? <Redirect to={`/profile/${auth.uid}`} /> : <Route path="/login" component={LoginPage} />
+        }
+        {
+          !isEmpty(auth) ? <Redirect to={`/profile/${auth.uid}`} /> : <Route path="/registration" component={RegisterPage} />
+        }
+      </Switch>
+    </BrowserRouter>
   );
 }
 

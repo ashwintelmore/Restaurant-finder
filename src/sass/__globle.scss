@@ -1,0 +1,169 @@
+// @import "./__variables";
+
+html {
+    width: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 0.955rem;
+    font-weight: 300;
+    background: $body-color;
+    // background-color: rgb(12, 14, 14);
+    font-family: $font-fam-heading;
+    line-height: 1.3;
+    
+   
+    
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+p{
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+
+h1 ,h2 , h3 ,h4 ,h5 ,h6 , .link{
+    color: $primary-color;
+    font-weight: 200;
+    font-size: $md-font;
+    @include breakpoint-down(small){
+        font-size: $sm-font;
+    }
+}
+
+li{
+    list-style: none;
+    margin: 0 1rem;
+}
+
+.error{
+    margin: 0 auto;
+    max-width: 75%;
+    color: red;
+    font-size: $sm-font;
+}
+
+.flex{
+    display: flex;
+    
+    &-jc-c{
+        justify-content: center;
+    }
+    &-jc-sb{
+        justify-content: space-between;
+    }
+    &-jc-sa{
+        justify-content: space-around;
+    }
+    &-ai-c{
+        align-items: center;
+    }
+}
+
+.container{
+    margin: 0 auto;
+    padding: .6rem 0;
+    max-width: 80rem;
+    // border: 1px solid red;
+    @include breakpoint-down(large){
+        margin: 0rem .6rem;
+    }
+}
+
+
+.input-card-box {
+    border-radius: 0px 155px;
+    background-color: $card-color;
+    overflow: hidden;
+    margin-top: 2rem;
+    box-shadow: -3px 4px 11px rgba(0, 0, 0, 0.25);
+    text-align: center;
+  
+    @include breakpoint-down(small){
+        border-radius: 0px 100px;
+        padding-bottom: 30px;
+    }
+
+    .heading {
+        font-size: $lg-font;
+        color: $card-color;
+        line-height: 5rem;
+        background: $secondary-color;
+
+        @include breakpoint-down(small){
+            font-size: 2rem;
+        }
+    }
+
+    .input-card-options {
+        margin-top: 3%;
+        
+    }
+}
+
+input ,#city ,option {
+    outline: 0;
+    background: $card-color;
+    border: 0;
+    width: 25%;
+    margin: 0.9rem;
+    padding: 0.9rem 1.2rem;
+    font-size: $sm-font;
+    border-radius: 53px;
+    border:1px solid #00ff73;
+    -webkit-transition: all 0.3 ease;
+    transition: all 1 ease;
+    &:focus{
+        box-shadow: -3px 4px 11px rgba(0, 0, 0, 0.25);
+
+    }
+    @include breakpoint-down(medium){
+        width: 90%;
+    }
+
+
+}
+
+button {
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    width: 10%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    margin: 30px 0;
+    border-radius: 10px;
+    
+    box-shadow: -3px 4px 11px rgba(0, 0, 0, 0.25);
+    @include breakpoint-down(small){
+        width: 60%;
+        
+    }
+
+}
+
+// Tailwind
+.currentColor{
+    background: #00ff73;
+}
